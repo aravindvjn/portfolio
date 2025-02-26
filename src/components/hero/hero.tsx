@@ -19,7 +19,7 @@ const Hero = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="h-screen w-full"
+      className="h-dvh w-full"
     >
       <NavBar />
       <div className="font-bold bg-black/15 w-full h-full text-white/60 p-[20px] sm:p-[40px] md:p-[60px] lg:p-[90px] flex">
