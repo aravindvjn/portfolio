@@ -4,7 +4,7 @@ import React, { useActionState } from "react";
 
 const ContactForm = () => {
   const inputClasses =
-    "w-full p-3 border bg-background border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500";
+    "w-full p-3 border bg-background border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 mt-[7px]";
 
   const [state, formAction, isPending] = useActionState(sendEmailAction, {
     message: "",

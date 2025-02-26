@@ -18,7 +18,7 @@ export function SingleProject({
   index: number;
 }) {
   const imageComponent = (
-    <CardContainer className="w-full">
+    <CardContainer className="w-full h-full ">
       <Image
         src={image_url || placeholder.src}
         height="1000"
@@ -30,16 +30,18 @@ export function SingleProject({
   );
 
   const contentComponent = (
-    <div className="w-full flex-1 mt-4 flex self-start flex-col">
+    <div className="w-full mt-1 flex self-start flex-col h-full ">
+      
       <p className="text-[12px] sm:text-[14px] opacity-60 text-justify">
         {content}
       </p>
+
       <motion.div
         whileHover={{
           scale: 1.01,
           rotateZ: "-2deg",
         }}
-        className="mt-[10px]"
+        className="mt-[20px]"
       >
         <Link
           target="_blank"
@@ -62,7 +64,7 @@ export function SingleProject({
 
   return (
     <div>
-      <div className={`hidden md:grid grid-cols-2 md:gap-[30px] lg:gap-[70px] ${index===0 ? "mb-[150px] mt-[50px]" : "my-[150px]"}`}>
+      <div className={`hidden md:grid grid-cols-2 md:gap-[30px] lg:gap-[70px] p-5 ${index===0 ? "mb-[150px] mt-[50px]" : "my-[150px]"}`}>
         {index % 2 === 0 && imageComponent}
         <div>
           {heading}
