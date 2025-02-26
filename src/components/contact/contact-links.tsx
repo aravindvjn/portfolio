@@ -8,7 +8,7 @@ const ContactLinks = () => {
     <div className="flex md:w-1/2 flex-wrap gap-[10px] sm:gap-[15px] justify-between">
       {contactOptions.map((option, index) => (
         <Link
-          className="flex w-fit items-center gap-[10px]"
+          className="flex w-fit items-center gap-[10px] hover:text-purple-500"
           href={option.link}
           key={index}
           target="_blank"
@@ -35,7 +35,7 @@ const contactOptions = [
   },
   {
     label: "LinkedIn",
-    link: "https://instagram.com/6windh",
+    link: "https://www.linkedin.com/in/aravind-vijayan-nandanam/",
     icon: <BsLinkedin />,
   },
   {

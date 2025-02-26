@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="py-[20px] sm:[p-40px] md:p-[60px] lg:p-[90px]"
+      className="py-[20px] pt-[60px] sm:[p-40px] md:p-[60px] lg:p-[90px]"
     >
       <div className="text-center">
         <Heading text="My Projects" />
@@ -15,7 +15,6 @@ const Projects = () => {
           A Snapshot of My Projects
         </p>
       </div>
-
       <Suspense fallback={<LoadingProjects />}>
         <ProjectGrid />
       </Suspense>

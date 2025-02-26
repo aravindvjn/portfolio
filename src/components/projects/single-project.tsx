@@ -70,7 +70,7 @@ export function SingleProject({
         </div>
         {index % 2 === 1 && imageComponent}
       </div>
-      <div className="flex flex-col md:hidden my-[50px] grid-cols-2 gap-[0px]  mx-[20px] ">
+      <div className="flex flex-col md:hidden mb-[50px] mt-[15px] grid-cols-2 gap-[0px]  mx-[20px] ">
         {heading}
         {imageComponent}
         {contentComponent}
