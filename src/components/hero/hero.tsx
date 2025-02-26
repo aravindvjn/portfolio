@@ -27,10 +27,10 @@ const Hero = () => {
           <p className="text-[20px] sm:text-[30px] md:text-[40px] lg:text-[50px] leading-[1.1]">
             Hai!
           </p>
-          <p className="text-[25px] sm:text-[40px] md:text-65px] lg:text-[px] leading-[1]">
-            I'm Aravind Vijayan
+          <p className="text-[30px] sm:text-[40px] md:text-60px] lg:text-[70px] leading-[1]">
+            I&#39;m Aravind Vijayan
           </p>
-          <p className="text-[15px] sm:text-[20px] md:text-[25px] lg:text-[30px] leading-[1.4]">
+          <p className="text-[20px] sm:text-[25px] md:text-[30px] lg:text-[35px] leading-[1.4]">
             <TypingEffect words={words} />
           </p>
           <Buttons />

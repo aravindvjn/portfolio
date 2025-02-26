@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { CardBody, CardContainer } from "../ui/3d-card";
+import { CardBody } from "../ui/3d-card";
 
 const SingleStack = ({ url }: { url: string }) => {
   return (

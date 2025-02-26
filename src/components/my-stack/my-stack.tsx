@@ -12,7 +12,7 @@ const MyStack = () => {
       <div className="text-center">
         <Heading text="My Tech Stack" />
         <p className="opacity-60 text-[14px] md:text-[16px]">
-          Technologies I've been using lately
+          Technologies I&#39;ve been using lately
         </p>
       </div>
       <CardContainer>

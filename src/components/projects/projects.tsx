@@ -11,6 +11,9 @@ const Projects = () => {
     >
       <div className="text-center">
         <Heading text="My Projects" />
+        <p className="opacity-60 text-[14px] md:text-[16px]">
+          A Snapshot of My Projects
+        </p>
       </div>
 
       <Suspense fallback={<LoadingProjects />}>

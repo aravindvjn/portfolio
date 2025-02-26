@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import React from "react";
-import { CardContainer, CardItem } from "../ui/3d-card";
-import hero from "@/assets/hero-background.jpg";
+import { CardContainer } from "../ui/3d-card";
+import placeholder from "@/assets/placeholder.jpg";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ProjectType } from "./type";
@@ -20,10 +20,10 @@ export function SingleProject({
   const imageComponent = (
     <CardContainer className="w-full">
       <Image
-        src={image_url || hero.src}
+        src={image_url || placeholder.src}
         height="1000"
         width="1000"
-        className="h-full w-full object-cover rounded-xl group-hover/card:shadow-xl "
+        className="h-full w-full outline outline-white/30 outline-[1px] object-cover rounded-xl group-hover/card:shadow-xl "
         alt="thumbnail"
       />
     </CardContainer>
@@ -62,7 +62,7 @@ export function SingleProject({
 
   return (
     <div>
-      <div className="hidden md:grid  my-[150px] grid-cols-2 gap-[70px]  mx-[50px]">
+      <div className={`hidden md:grid grid-cols-2 md:gap-[30px] lg:gap-[70px] ${index===0 ? "mb-[150px] mt-[50px]" : "my-[150px]"}`}>
         {index % 2 === 0 && imageComponent}
         <div>
           {heading}

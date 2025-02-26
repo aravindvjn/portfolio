@@ -33,7 +33,7 @@ const TypingEffect = ({ words }: { words: string[] }) => {
   }, [text, isDeleting, wordIndex, words]);
 
   return (
-    <span className="text-2xl font-bold text-blue-500 ">
+    <span className="font-bold text-blue-500">
       {text}
       <span className="animate-blink">|</span>
     </span>
