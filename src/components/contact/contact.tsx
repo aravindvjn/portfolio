@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="p-[20px] sm:[p-40px] md:p-[60px] lg:p-[90px]"
+      className="p-[20px] sm:[p-40px] md:p-[60px] lg:p-[90px] text-[12px] sm:text-[14px] md:text-[16px]"
     >
       <div className="text-center">
         <Heading text="Contact" />

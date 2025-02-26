@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 
 const ContactLinks = () => {
   return (
-    <div className="flex md:w-1/2 flex-wrap gap-[15px] justify-between">
+    <div className="flex md:w-1/2 flex-wrap gap-[10px] sm:gap-[15px] justify-between">
       {contactOptions.map((option, index) => (
         <Link
           className="flex w-fit items-center gap-[10px]"

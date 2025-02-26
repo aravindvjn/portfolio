@@ -23,7 +23,7 @@ export function SingleProject({
         src={image_url || placeholder.src}
         height="1000"
         width="1000"
-        className="h-full w-full outline outline-white/30 outline-[1px] object-cover rounded-xl group-hover/card:shadow-xl "
+        className="h-full w-full outline outline-white/30 outline-[1px] object-cover rounded sm:rounded-xl group-hover/card:shadow-xl "
         alt="thumbnail"
       />
     </CardContainer>
@@ -53,7 +53,7 @@ export function SingleProject({
   );
 
   const heading = (
-    <p className="font-semibold text-[18px] md:text-[22px] sm:py-[10px]">
+    <p className="font-semibold text-[18px] md:text-[22px] py-[5px] sm:py-[10px]">
       {name}
     </p>
   );
