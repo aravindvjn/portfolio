@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const NavBar = () => {
-  const linkClasses = "cursor-pointer hover:text-purple-500";
+  const linkClasses = "cursor-pointer hover:text-orange-500";
 
   return (
     <div className="fixed z-10 w-full flex items-center px-[10px] right-0 bg-black/70 backdrop-blur h-[40px]">
