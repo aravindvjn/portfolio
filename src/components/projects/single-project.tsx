@@ -69,11 +69,11 @@ export function SingleProject(
 
   return (
     <div>
-      {/* <ShowPreview
+      <ShowPreview
         {...project}
         setShowPreview={setShowPreview}
         showPreview={showPreview}
-      /> */}
+      />
       <div
         className={`hidden md:grid grid-cols-2 md:gap-[30px] lg:gap-[70px] p-5 ${
           index === 0 ? "mb-[150px] mt-[50px]" : "my-[150px]"
