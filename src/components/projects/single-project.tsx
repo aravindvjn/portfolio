@@ -1,37 +1,42 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { CardContainer } from "../ui/3d-card";
-import placeholder from "@/assets/placeholder.jpg";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ProjectType } from "./type";
+import ShowPreview from "./show-preview";
 
-export function SingleProject({
-  content,
-  githubLink,
-  name,
-  index,
-  image_url,
-}: ProjectType & {
-  index: number;
-}) {
+export function SingleProject(
+  project: ProjectType & {
+    index: number;
+  }
+) {
+  const { content, githubLink, name, index, image_url } = project;
+  const placeholder = "/placeholder.jpg";
+
+  const [showPreview, setShowPreview] = useState<boolean>(false);
+
+  const handleClick = () => {
+    setShowPreview(true);
+  };
+
   const imageComponent = (
     <CardContainer className="w-full h-full ">
       <Image
-        src={image_url || placeholder.src}
+        onClick={handleClick}
+        src={image_url || placeholder}
         height="1000"
         width="1000"
-        className="h-full w-full outline outline-white/30 outline-[1px] object-cover rounded sm:rounded-xl group-hover/card:shadow-xl "
+        className="h-full cursor-pointer w-full outline outline-white/30 outline-[1px] object-cover rounded sm:rounded-xl group-hover/card:shadow-xl "
         alt="thumbnail"
       />
     </CardContainer>
   );
 
   const contentComponent = (
-    <div className="w-full mt-1 flex self-start flex-col h-full ">
-      
+    <div className="w-full mt-[10px] sm:mt-0 flex self-start flex-col h-full ">
       <p className="text-[12px] sm:text-[14px] opacity-60 text-justify">
         {content}
       </p>
@@ -41,7 +46,7 @@ export function SingleProject({
           scale: 1.01,
           rotateZ: "-2deg",
         }}
-        className="mt-[20px]"
+        className="mt-[10px] sm:mt-[20px]"
       >
         <Link
           target="_blank"
@@ -64,7 +69,16 @@ export function SingleProject({
 
   return (
     <div>
-      <div className={`hidden md:grid grid-cols-2 md:gap-[30px] lg:gap-[70px] p-5 ${index===0 ? "mb-[150px] mt-[50px]" : "my-[150px]"}`}>
+      {/* <ShowPreview
+        {...project}
+        setShowPreview={setShowPreview}
+        showPreview={showPreview}
+      /> */}
+      <div
+        className={`hidden md:grid grid-cols-2 md:gap-[30px] lg:gap-[70px] p-5 ${
+          index === 0 ? "mb-[150px] mt-[50px]" : "my-[150px]"
+        }`}
+      >
         {index % 2 === 0 && imageComponent}
         <div>
           {heading}

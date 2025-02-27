@@ -8,7 +8,7 @@ const Buttons = () => {
     <div className="flex text-[12px] sm:text-[16px] items-center mt-[10px] gap-[10px] md:gap-[20px] mb-[10px]">
       <Link
         className={`${buttonClasses} bg-white/20 text-white hover:scale-110 duration-300 ease-in-out`}
-        href={"/#about"}
+        href={"/#about-me"}
       >
         About Me
       </Link>
