@@ -26,7 +26,13 @@ body {
   display: none;
 }
 
+.content {
+  cursor: pointer;
+}
+
 .content>span {
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: #061123;
   font-weight: 600;
+  padding: 0px 5px;
 }

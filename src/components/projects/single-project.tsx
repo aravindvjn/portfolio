@@ -69,11 +69,13 @@ export function SingleProject(
 
   return (
     <div>
+      
       <ShowPreview
         {...project}
         setShowPreview={setShowPreview}
         showPreview={showPreview}
       />
+
       <div
         className={`hidden md:grid grid-cols-2 md:gap-[30px] lg:gap-[70px] p-5 ${
           index === 0 ? "mb-[150px] mt-[50px]" : "my-[150px]"
@@ -86,11 +88,13 @@ export function SingleProject(
         </div>
         {index % 2 === 1 && imageComponent}
       </div>
+
       <div className="flex flex-col md:hidden mb-[50px] mt-[15px] grid-cols-2 gap-[0px]  mx-[20px] ">
         {heading}
         {imageComponent}
         {contentComponent}
       </div>
+
     </div>
   );
 }

@@ -19,7 +19,7 @@ const ShowPreview = ({
     >
       <Heading text={name} />
         <Image
-          className="w-fit h-fit order-2 border object-contain"
+          className="w-fit rounded h-fit order-2 border border-white/40 object-contain"
           src={image_url || placeholder}
           alt=""
           height={1000}
