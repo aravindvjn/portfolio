@@ -34,4 +34,5 @@ export const sendEmail = async (email: string, content: string) => {
     }
 };
 
-module.exports = sendEmail;
+export default sendEmail;
+
