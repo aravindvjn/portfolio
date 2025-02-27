@@ -38,3 +38,38 @@ body {
   padding: 0px 5px;
 }
 
+
+.hero-buttons {
+  position: relative;
+  overflow: hidden;
+  transition: all 200ms ease-in-out;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgb(255, 58, 58);
+    translate: -100% 0px;
+    transition: all 200ms ease-in-out;
+  }
+
+  &:hover:before {
+    translate: 0px 0px;
+  }
+
+  &:hover {
+    color: white;
+  }
+}
+
+.hero-button1{
+  &:before{
+    background-color: rgb(58, 68, 255);
+    translate: 100% 0px;
+
+  }
+}

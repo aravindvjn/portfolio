@@ -3,8 +3,12 @@ import React from "react";
 import { CardBody } from "../ui/3d-card";
 
 const SingleStack = ({ url }: { url: string }) => {
+  
+  const cardBodyClassess =
+    "bg-[#251C31] cursor-pointer rounded-full w-[42px] h-[42px] sm:h-[60px] sm:w-[60px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] overflow-hidden p-[10px] sm:p-[15px] md:p-[30px] flex justify-center items-center";
+
   return (
-    <CardBody className="bg-[#251C31] cursor-pointer rounded-full w-[42px] h-[42px] sm:h-[60px] sm:w-[60px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] overflow-hidden p-[10px] sm:p-[15px] md:p-[30px] flex justify-center items-center">
+    <CardBody className={cardBodyClassess}>
       <Image
         src={url}
         alt="Stack Icon"
