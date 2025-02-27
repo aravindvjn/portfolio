@@ -12,7 +12,7 @@ const ContentTexts = () => {
       deployment. While my expertise is in web development, I also have
       experience with 
       <span>React Native for cross-platform mobile development</span>. As a 
-      <span>Cybersecurity Enthusiast</span>, I am also exploring security
+      <span>Cybersecurity Enthusiast,</span> I am also exploring security
       practices to enhance application safety. My focus is on creating seamless
       and efficient digital experiences while continually pushing the boundaries
       of innovation and best practices in web development.

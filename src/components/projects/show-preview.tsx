@@ -16,7 +16,7 @@ const ShowPreview = ({
   return (
     <div
       onClick={() => setShowPreview(false)}
-      className="fixed inset-0 z-10  flex bg-black/80 backdrop-blur flex-col items-center h-dvh justify-center  overflow-scroll"
+      className="fixed inset-0 z-10 hidden sm:flex bg-black/80 backdrop-blur flex-col items-center h-dvh justify-center  overflow-scroll"
     >
       <CardContainer className="flex flex-col p-10 h-fit w-screen">
         <Heading text={name} />

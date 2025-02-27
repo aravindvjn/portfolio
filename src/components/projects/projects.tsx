@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="py-[20px] pt-[60px] sm:[p-40px] md:p-[60px] lg:p-[90px]"
+      className="p-[20px] pt-[60px] sm:p-[40px] md:p-[60px] lg:p-[90px]"
     >
       <div className="text-center">
         <Heading text="My Projects" />

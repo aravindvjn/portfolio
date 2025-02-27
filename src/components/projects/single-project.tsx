@@ -36,9 +36,8 @@ export function SingleProject(
   );
 
   const contentComponent = (
-    <div className="w-full mt-[10px] sm:mt-0 flex self-start flex-col h-full ">
+    <div className="w-full mt-[10px] md:mt-0 flex self-start flex-col h-full">
       <p className="text-[12px] sm:text-[14px] opacity-60 text-justify hover:opacity-100 cursor-pointer duration-100 ease-in-out">
-        
         {content}
       </p>
 
@@ -90,7 +89,7 @@ export function SingleProject(
         {index % 2 === 1 && imageComponent}
       </div>
 
-      <div className="flex flex-col md:hidden mb-[50px] mt-[15px] grid-cols-2 gap-[0px]  mx-[20px] ">
+      <div className="flex flex-col md:hidden mb-[50px] mt-[15px] grid-cols-2 gap-[0px]">
         {heading}
         {imageComponent}
         {contentComponent}
