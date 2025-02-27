@@ -1,3 +1,4 @@
+'use server'
 import { sendEmail } from "../helpers/send-mail";
 
 export type PrevStateType = {
@@ -28,14 +29,23 @@ export const sendEmailAction = async (prevState: PrevStateType, formData: FormDa
             message: "All fields are required."
         }
     }
+    try {
 
-    const res = await sendEmail(email, content);
-    return {
-        ...prevState,
-        ...res,
-        data: {
-            content: "",
-            email: ""
+
+        const res = await sendEmail(email, content);
+        return {
+            ...prevState,
+            ...res,
+            data: res.success ? {
+                content: "",
+                email: ""
+            } : prevState.data
+        }
+
+    } catch {
+        return {
+            ...prevState,
+            message: "Server not responding."
         }
     }
 
