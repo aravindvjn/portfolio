@@ -8,7 +8,7 @@ const NavBar = () => {
 
   return (
     <div className="fixed z-10 w-full flex items-center px-[10px] right-0 bg-black/70 backdrop-blur h-[40px]">
-      <nav className=" flex absolute right-0 sm:right-[20px] items-center md:right-[50px] w-full sm:max-w-[500px] text-[12px] gap-[10px] justify-around sm:gap-[30px]">
+      <nav className=" flex absolute right-0 sm:right-[20px] items-center md:right-[50px] w-full sm:max-w-[500px] text-[12px] gap-[10px] justify-evenly sm:gap-[30px]">
         {navLinks.map((nav) => (
           <Link className={linkClasses} key={nav.link} href={nav.link}>
             {nav.label}
