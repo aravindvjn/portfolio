@@ -6,7 +6,7 @@ import TypingEffect from "../common/typing-effect";
 
 const Hero = () => {
     
-const words = ["Software Engineer", "Data Scientist"];
+const words = ["Software Engineer", "Data Engineer","Cybersecurity Enthusiast"];
 
   return (
     <div
