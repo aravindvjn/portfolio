@@ -6,11 +6,7 @@ import TypingEffect from "../common/typing-effect";
 
 const Hero = () => {
     
-<<<<<<< HEAD
 const words = ["Software Engineer", "Data Engineer","Cybersecurity Enthusiast"];
-=======
-const words = ["Software Engineer"];
->>>>>>> 2a93cd6db28e2a1bab5131177567e55805bc3b49
 
   return (
     <div

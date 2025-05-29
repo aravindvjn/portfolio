@@ -15,7 +15,6 @@ const ContentTexts = () => {
       practices to enhance application safety. Additionally, I have knowledge in{" "}
       <span>Data Engineering</span> and Big Data technologies, enabling me to
       work with large-scale data pipelines and infrastructure.
-      development.
     </Content>
   );
 };
