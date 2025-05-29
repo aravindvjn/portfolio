@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
 import { CardContainer } from "../ui/3d-card";
 import Link from "next/link";
@@ -24,14 +23,12 @@ export function SingleProject(
 
   const imageComponent = (
     <CardContainer className="w-full h-full ">
-      <Image
-        onClick={handleClick}
-        src={image_url || placeholder}
-        height="600"
-        width="1000"
-        className="h-full cursor-pointer w-full outline outline-white/30 outline-[1px] object-cover rounded sm:rounded-xl group-hover/card:shadow-xl "
-        alt="thumbnail"
-      />
+      <img
+  onClick={handleClick}
+  src={image_url || placeholder}
+  className="h-full cursor-pointer w-full outline outline-white/30 outline-[1px] object-cover rounded sm:rounded-xl group-hover/card:shadow-xl"
+  alt="thumbnail"
+/>
     </CardContainer>
   );
 

@@ -14,9 +14,7 @@ const ContentTexts = () => {
       <span>Cybersecurity Enthusiast,</span> I am also exploring security
       practices to enhance application safety. Additionally, I have knowledge in{" "}
       <span>Data Engineering</span> and Big Data technologies, enabling me to
-      work with large-scale data pipelines and infrastructure. My focus is on
-      creating seamless and efficient digital experiences while continually
-      pushing the boundaries of innovation and best practices in web
+      work with large-scale data pipelines and infrastructure.
       development.
     </Content>
   );
