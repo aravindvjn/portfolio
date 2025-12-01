@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: "https://aravindvijayan.in",
+    siteUrl: "https://aravindvijayan.vercel.app",
     generateRobotsTxt: true, 
   };
   
