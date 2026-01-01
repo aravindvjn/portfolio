@@ -45,7 +45,7 @@ export const metaData = {
         siteName: "Aravind Vijayan Portfolio",
         images: [
             {
-                url: "https://aravindvijayan.vercel.app/image.png",
+                url: "https://aravindvijayan.vercel.app/aravind-vijayan.png",
                 width: 1200,
                 height: 630,
                 alt: "Aravind Vijayan Portfolio Image",
@@ -59,11 +59,11 @@ export const metaData = {
         title: "Aravind Vijayan | Software Engineer, Cybersecurity Enthusiast & Data Engineer",
         description:
             "Crafting secure and intelligent digital solutions. Explore my portfolio on full-stack development, cybersecurity best practices, and scalable data engineering.",
-        images: ["https://aravindvijayan.vercel.app/image.png"],
+        images: ["https://aravindvijayan.vercel.app/aravind-vijayan.png"],
     },
     icons: {
-        icon: "/image.png",
-        apple: "/image.png",
+        icon: "/aravind-vijayan.png",
+        apple: "/aravind-vijayan.png",
     },
     robots: "index, follow",
 };
