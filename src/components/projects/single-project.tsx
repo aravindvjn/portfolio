@@ -50,7 +50,7 @@ export function SingleProject(
           href={githubLink}
           className="bg-blue-500 text-[12px] md:text-[16px] px-[15px]  py-[7px] rounded w-fit "
         >
-          Source code
+          {githubLink?.includes('github') ? "Source code" : "Vist site"}
         </Link>
       </motion.div>
     </div>
