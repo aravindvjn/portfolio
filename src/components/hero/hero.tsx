@@ -3,11 +3,19 @@ import heroBackground from "@/assets/hero-background.jpg";
 import Buttons from "./buttons";
 import NavBar from "../common/nav-bar";
 import TypingEffect from "../common/typing-effect";
+import Image from "next/image";
 
-const Hero = () => {
-    
-const words = ["Software Engineer", "Data Engineer","Cybersecurity Enthusiast"];
+const WORDS = [
+  "Software Engineer",
+  "Data Engineer",
+  "Cybersecurity Enthusiast",
+];
 
+type Props = {
+  words: string[];
+};
+
+const Hero = ({ words }: Props) => {
   return (
     <div
       style={{
@@ -27,7 +35,7 @@ const words = ["Software Engineer", "Data Engineer","Cybersecurity Enthusiast"];
             I&#39;m Aravind Vijayan
           </p>
           <p className="text-[18px] sm:text-[25px] md:text-[30px] lg:text-[35px] leading-[1.4]">
-            <TypingEffect words={words} />
+            <TypingEffect words={words?.length ? words : WORDS} />
           </p>
           <Buttons />
         </div>

@@ -4,11 +4,13 @@ import Contact from "@/components/contact/contact";
 import Hero from "@/components/hero/hero";
 import MyStack from "@/components/my-stack/my-stack";
 import Projects from "@/components/projects/projects";
+import { getPortfolioData } from "@/services/meta.service";
 
-export default function Home() {
+export default async function Home() {
+  const { data } = await getPortfolioData();
   return (
     <>
-      <Hero />
+      <Hero words={data?.heroWords?.map((i) => i?.text)} />
       <AboutMe />
       <MyStack />
       <Projects />

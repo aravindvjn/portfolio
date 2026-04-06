@@ -2,6 +2,7 @@ import React from "react";
 import Content from "../common/content";
 import { getMyAge } from "@/lib/helpers/get-age";
 
+
 const ContentTexts = () => {
   return (
     <Content>

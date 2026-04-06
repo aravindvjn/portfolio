@@ -1,5 +1,6 @@
 'use server'
-import { sendEmail } from "../helpers/send-mail";
+
+import sendEmail from "@/lib/helpers/send-mail";
 
 export type PrevStateType = {
     success: boolean;

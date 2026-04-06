@@ -1,0 +1,162 @@
+[
+  {
+    "id": "09b8db8a-923b-4424-96f8-9abaa1f929ee",
+    "name": "AI-Powered UI/UX Design Creator",
+    "content": "An advanced AI-powered UI/UX creation platform built with Next.js, designed to streamline the entire design process from concept to execution. The app enables designers and developers to convert ideas and text prompts into well-structured layouts, responsive components, and complete user flows. With a focus on speed, consistency, and usability, it supports rapid iteration, design refinement, and seamless collaboration. By bridging the gap between design and development, the platform helps teams create modern, scalable, and user-centric interfaces efficiently.",
+    "githubLink": "https://ui.aravindvijayan.in/",
+    "image_url": "https://res.cloudinary.com/dmtvealue/image/upload/v1767809781/video_20260107_165623_edit_ywat1h.gif",
+    "priority": 7
+  },
+  {
+    "id": "09b8db8a-923b-4424-96f8-9abaa1f929ep",
+    "name": "Red Bull F1 Blueprint",
+    "content": "A detailed breakdown of the engineering behind a Red Bull Racing Formula 1 car. Explore the intricate components that make up the machine, from aerodynamic surfaces and suspension systems to the power unit and cooling structures. Each part is clearly identified and explained, helping you understand its role in speed, stability, and efficiency. Discover how advanced materials, precision design, and innovative engineering work together to create one of the fastest and most sophisticated machines in motorsport.",
+    "githubLink": "https://f1.aravindvijayan.in/",
+    "image_url": "https://res.cloudinary.com/dmtvealue/image/upload/v1773571817/YouCut_20260315_124826955_cxvvkn.gif",
+    "priority": 8
+  },
+  {
+    "id": "373e3f53-0ec8-4e86-8397-ce5cade41476",
+    "name": "NeuroFill : SaaS Web App",
+    "content": "Neurofill is an innovative SaaS web application powered by Next.js, Prisma, and TypeScript, designed to meet diverse creative and professional needs. It leverages Gemini AI to enhance user experience with intelligent assistance across its tools, including a Resume Maker, QR Code Generator, Invoice Generator, and Privacy Policy & Terms Generator. With features like email verification, password reset, and forgot password, Neurofill combines powerful AI capabilities with secure user management to help individuals and businesses streamline their tasks efficiently.",
+    "githubLink": "https://github.com/aravindvjn/NeuroFill",
+    "image_url": "https://res.cloudinary.com/dmtvealue/image/upload/v1741794705/signal-2025-03-12-211816_am9x7g.gif",
+    "priority": 9
+  },
+  {
+    "id": "bbf21f39-8a84-41e2-a46e-78e97ee10c97",
+    "name": "Red Bull 3D Showcase",
+    "content": "Red Bull Racing 3D Showcase is an immersive web experience built with Next.js and Three.js to bring the thrill of Red Bull Racing to life. This app features a high-quality 3D model of a Red Bull Racing car along with a Red Bull drink, allowing users to explore these elements in a dynamic, interactive environment.  With smooth animations powered by GSAP and Framer Motion, users can enjoy a seamless and engaging experience. The app utilizes React Three Fiber and Drei to render realistic 3D visuals, ensuring high performance and interactivity.  Designed with a modern and responsive UI using Tailwind CSS, this showcase delivers a visually appealing and technically robust representation of the Red Bull Racing brand. Whether you're a motorsport enthusiast or a fan of 3D web experiences, this app offers an exciting way to explore Red Bull Racing in a new dimension.",
+    "githubLink": "https://github.com/aravindvjn/RedBull-3D-com",
+    "image_url": "https://res.cloudinary.com/dmtvealue/image/upload/v1741116029/video_20250305_004512_edit-ezgif.com-video-to-gif-converter_cpevah.gif",
+    "priority": 10
+  },
+  {
+    "id": "9770ddd8-365c-4fff-906c-f5ed3005c029",
+    "name": "Real Estate Web App",
+    "content": "Built a robust real estate web app with Next.js, TypeScript, and PostgreSQL, featuring 24 routes. Implemented property listing, filtering, and editing, secure authentication via NextAuth (Google OAuth), and an admin panel for activity monitoring. Added support for reviews, blogs, and strong security measures against XSS and SQL injection. Styled with Tailwind CSS and enhanced with Framer Motion animations for a smooth user experience.",
+    "githubLink": "https://github.com/aravindvjn/Real-Estate",
+    "image_url": "https://res.cloudinary.com/dmtvealue/image/upload/v1740569258/Screenshot_2025-02-26_165850_mf7sx2.png",
+    "priority": 11
+  },
+  {
+    "id": "86512df2-4440-4a9a-bbd6-d4f0ef2eafa4",
+    "name": "Threads Web Clone",
+    "content": "Threads Clone is a fully functional Clone of Meta's Threads, where users can create posts (threads), like and reply to them (including images), follow and unfollow other users, and manage their profiles securely. It features a modern authentication system using JWT-based authentication via cookies, ensuring user data security. The app boasts a sleek, responsive UI built with Tailwind CSS and enhanced with smooth animations powered by Framer Motion. The backend is designed for performance and security, utilizing Next.js server actions to handle data efficiently. With a seamless user experience and interactions, Threads Clone provides an engaging and intuitive social networking environment.",
+    "githubLink": "https://github.com/aravindvjn/Threads-Clone",
+    "image_url": "https://res.cloudinary.com/dmtvealue/image/upload/v1740576500/Screenshot_2025-02-26_185846_fongfb.png",
+    "priority": 20
+  },
+  {
+    "id": "108c8d8e-2d95-4e8e-9703-0c669a604e1f",
+    "name": "Instagram Clone Mobile App",
+    "content": "Instagram clone app, developed using React Native, TypeScript, and Firebase, closely replicates the appearance and functionality of the original Instagram. The app allows users to browse and interact with feeds, watch reels, like posts, follow other users, and share their own photos and reels. With real-time updates powered by Firebase, users experience seamless interactions and instant feedback. Additionally, the app includes real-time chatting functionality, allowing users to send and receive messages instantly, enhancing the social experience. The familiar interface, combined with smooth navigation and robust performance, ensures an engaging and intuitive social media experience that mirrors the look and feel of Instagram.",
+    "githubLink": "https://github.com/aravindvjn/Instagram-Clone-React-Native",
+    "image_url": "https://res.cloudinary.com/dmtvealue/image/upload/v1740577462/signal-2025-02-26-191123_azmusf.jpg",
+    "priority": 30
+  },
+  {
+    "id": "142455f7-0be8-44e8-b8ce-67088d74a461",
+    "name": "WhatsApp Web Clone",
+    "content": "This WhatsApp Web Clone is a real-time messaging app built with React for the frontend and Node.js with Express for the backend. It features Socket.IO for real-time chat, JWT-based authentication, and end-to-end encryption using crypto-js. Users can send messages, share statuses, and make video calls using Simple Peer. The app includes online/offline indicators, typing status, and chat history storage with MongoDB. Designed with Tailwind CSS, it replicates the responsive UI of WhatsApp Web. The backend ensures security with JWT authentication and XSS protection, making it a fast, secure, and feature-rich communication platform",
+    "githubLink": "https://github.com/aravindvjn/WhatsApp-Web-Clone",
+    "image_url": "https://res.cloudinary.com/dmtvealue/image/upload/v1740655780/Screenshot_2025-02-27_170106_cxhhwy.png",
+    "priority": 40
+  },
+  {
+    "id": "fd2e08ff-86dd-4ad3-99a4-d18374f78a3f",
+    "name": "Chat App",
+    "content": "This Chat App is a modern chat application designed for seamless communication between friends. Users can send friend requests and engage in real-time chats powered by Socket.IO. Prioritizing security, the app employs JSON Web Tokens (JWT) and bcrypt for secure password hashing, ensuring user data remains safe.In addition to core chat features, users can edit their profiles and manage passwords for enhanced security. Built with React (using TypeScript) for the frontend and Node.js with Express for the backend, along with PostgreSQL for efficient data management, the app offers a reliable communication platform. With its clean and intuitive interface, This Chat App makes conversations enjoyable and secure.",
+    "githubLink": "https://github.com/aravindvjn/Ts-Chat-App",
+    "image_url": null,
+    "priority": 50
+  },
+  {
+    "id": "48ff8578-d4aa-47e4-b94c-96a5d6e3a6de",
+    "name": "Shopping Web App",
+    "content": "This Shopping Web App provides an engaging, secure online shopping experience. Built with React and AOS for smooth animations, it fetches real-time product data from a public API. Secure account management is handled with Node.js and JWT, ensuring user data protection. Styled with Tailwind CSS for a modern look, the app offers a responsive, user-friendly interface.",
+    "githubLink": "https://github.com/aravindvjn/Shopee",
+    "image_url": null,
+    "priority": 60
+  },
+  {
+    "id": "615f935f-0474-4a35-acdf-9dcf99cf0ef9",
+    "name": "E-commerce",
+    "content": "Quintrelix Shopee is an educational e-commerce site built with React, Node.js, Express.js, and PostgreSQL. It simulates features like browsing, cart management, order tracking, and user authentication with Passport.js. The admin panel allows full customization of products and site content.",
+    "githubLink": "https://github.com/aravindvjn/Quintrelix-Shopee",
+    "image_url": null,
+    "priority": 70
+  },
+  {
+    "id": "6f3d5f5e-3d59-4359-9f28-70afc9368acf",
+    "name": "Codex : Developers Social Network",
+    "content": "This web app is a developer-focused social network where users can share and discuss code snippets. Built with Next.js, it features authentication through Google and GitHub via NextAuth, a PostgreSQL backend for secure data management, Tailwind CSS for modern styling, TypeScript for robust development, and Framer Motion for smooth animations.",
+    "githubLink": "https://github.com/aravindvjn/codex",
+    "image_url": "https://res.cloudinary.com/dmtvealue/image/upload/v1740636676/Screenshot_2025-02-27_114212_cnowdo.png",
+    "priority": 80
+  },
+  {
+    "id": "2f7190d0-163b-4aec-bb72-868a27b53594",
+    "name": "Never Have I Ever App",
+    "content": "Never Have I Ever is a React Native app built with Expo, featuring a Node.js backend and Socket.IO for real-time communication. Users can create private rooms with a unique ID and password, allowing friends to join and play together. The app offers a seamless and interactive experience, making it easy to connect and enjoy the game across both mobile and web platforms.",
+    "githubLink": "https://github.com/aravindvjn/never-have-i-ever-RN",
+    "image_url": null,
+    "priority": 90
+  },
+  {
+    "id": "dfc5c4e6-c702-40d1-883a-bc3a7e1cd1da",
+    "name": "Social Media",
+    "content": "Quintrelix is a dynamic social media platform, built using React and Firebase. It allows users to seamlessly post photos, chat with friends in real time, and customize their profiles for a personalized experience.Quintrelix offers a sleek, modern interface and is optimized for social connectivity and content sharing.",
+    "githubLink": "https://github.com/aravindvjn/Quintrelix",
+    "image_url": null,
+    "priority": 100
+  },
+  {
+    "id": "64d4af79-9817-4ea2-8a28-f408870c85b8",
+    "name": "Expense Tracker App",
+    "content": "The Expense Tracker app is a React Native application built with TypeScript, utilizing TanStack Query for efficient data fetching and state management. It offers a seamless experience for tracking and categorizing expenses, with intuitive navigation and secure data storage. The app's responsive design ensures users can easily monitor their spending and stay in control of their finances.",
+    "githubLink": "https://github.com/aravindvjn/track-expenses-rn",
+    "image_url": null,
+    "priority": 110
+  },
+  {
+    "id": "d5de18f8-caf7-48b0-9b98-7213d45089a9",
+    "name": "Chat App With React Native",
+    "content": "This Chat App’s mobile version offers the same seamless communication experience as the web platform, now optimized for mobile devices. Users can send friend requests, engage in real-time chats, and manage their profiles with ease, all while on the go. Powered by Socket.IO, the app ensures live and interactive conversations, while JSON Web Tokens (JWT) and bcrypt secure user data through encrypted authentication and password hashing. The mobile app mirrors the clean and intuitive design of the web version, with a responsive interface tailored for smartphones. Built with React Native, it provides a reliable and secure messaging platform for users to stay connected anytime, anywhere.",
+    "githubLink": "https://github.com/aravindvjn/Chat-App-React-Native",
+    "image_url": null,
+    "priority": 120
+  },
+  {
+    "id": "de079c6d-ae2b-4382-9125-992f8b935551",
+    "name": "Design System with React and TypeScript",
+    "content": "Our design system, built with React and TypeScript, is a collection of reusable components and guidelines that ensures consistency and efficiency across applications. It features a modular component library, type safety for enhanced reliability, customizable theming, and a focus on accessibility. With comprehensive documentation and responsive design principles, our system streamlines development, fosters collaboration between teams, and supports scalable, user-centered applications.",
+    "githubLink": "https://github.com/aravindvjn/Design-System",
+    "image_url": null,
+    "priority": 130
+  },
+  {
+    "id": "8054229b-e7bf-4734-bfb0-9c06da28b38e",
+    "name": "Meal Recipe Explorer",
+    "content": "Meal Recipe Explorer is a responsive web app built with React, Tailwind CSS, and AOS, offering a curated selection of recipes from a public API. Users can browse meals by category and mark favorites, creating a personalized recipe collection with smooth animations and an intuitive design.",
+    "githubLink": "https://github.com/aravindvjn/meal",
+    "image_url": null,
+    "priority": null
+  },
+  {
+    "id": "09b8db8a-923b-4424-96f8-9abaa1f929eb",
+    "name": "News Web App",
+    "content": "I developed a responsive news web app using React.js, which fetches real-time news data from a public NewsAPI. The app allows users to browse the latest news articles, categorized by topic.It provides a clean interface for easy navigation, ensuring a seamless experience across devices.",
+    "githubLink": "https://github.com/aravindvjn/demonews",
+    "image_url": null,
+    "priority": null
+  },
+  {
+    "id": "5fb50568-e7d4-459e-b2f5-d9b2320d7830",
+    "name": "Simon: The Desktop Game",
+    "content": "A web-based recreation of the classic Simon game, featuring four colored buttons. Players aim to match a progressively longer sequence of colors, providing a fun and challenging test of memory. Built using HTML, CSS, and JavaScript with jQuery.",
+    "githubLink": "https://github.com/aravindvjn/simonGame",
+    "image_url": null,
+    "priority": null
+  }
+]

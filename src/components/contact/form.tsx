@@ -1,5 +1,5 @@
 "use client";
-import { sendEmailAction } from "@/lib/actions/email-action";
+import { sendEmailAction } from "@/actions/email-action";
 import React, { useActionState } from "react";
 
 const ContactForm = () => {
