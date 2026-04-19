@@ -2,8 +2,12 @@ import React from "react";
 import Heading from "../common/heading";
 import ContactForm from "./form";
 import ContactLinks from "./contact-links";
+import { ContactOptionItem } from "@/types/admin.type";
 
-const Contact = () => {
+type Props = {
+  contactOptions: ContactOptionItem[];
+};
+const Contact = ({ contactOptions }: Props) => {
   return (
     <div
       id="contact"
@@ -12,12 +16,12 @@ const Contact = () => {
       <div className="text-center">
         <Heading text="Contact" />
         <p className="opacity-60 text-[14px] md:text-[16px]">
-          Whether it&#39;s about work, tech, or just a friendly chat, feel free to
-          reach out!
+          Whether it&#39;s about work, tech, or just a friendly chat, feel free
+          to reach out!
         </p>
       </div>
       <ContactForm />
-      <ContactLinks />
+      <ContactLinks contactOptions={contactOptions} />
     </div>
   );
 };

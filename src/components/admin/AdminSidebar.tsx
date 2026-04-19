@@ -13,6 +13,7 @@ import {
   LogOut,
   ChevronRight,
 } from "lucide-react";
+import LogoutButton from "../buttons/LogoutButton";
 
 type NavItem = {
   label: string;
@@ -139,13 +140,7 @@ function SidebarContent({ pathname }: { pathname: string }) {
       <SidebarNav pathname={pathname} />
 
       <div className="mt-auto border-t border-white/10 p-4">
-        <button
-          type="button"
-          className="flex w-full items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white/75 transition hover:bg-white/[0.08]"
-        >
-          <LogOut className="h-4 w-4" />
-          Logout
-        </button>
+        <LogoutButton />
       </div>
     </>
   );

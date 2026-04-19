@@ -37,7 +37,6 @@ export default function RootLayout({
       >
         <Toaster />
         <TanstackProvider>{children}</TanstackProvider>
-        {/* </LenisProvider> */}
       </body>
     </html>
   );

@@ -4,11 +4,12 @@ import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db";
 import type {
   ActionResponse,
+  GetHeroWordsResponse,
   HeroWordPayload,
   UpdateHeroWordPayload,
 } from "@/types/admin.type";
 
-export async function getHeroWordsAction(): Promise<ActionResponse> {
+export async function getHeroWordsAction(): Promise<GetHeroWordsResponse> {
   try {
     const data = await prisma.heroWord.findMany({
       orderBy: [

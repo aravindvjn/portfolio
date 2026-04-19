@@ -1,24 +1,19 @@
 import React, { Suspense } from "react";
 import Heading from "../common/heading";
 import ProjectGrid from "./project-grid";
-import LoadingProjects from "./loading-projects";
+import { ProjectType } from "./type";
 
-const Projects = () => {
+const Projects = ({ projects }: { projects: ProjectType[] }) => {
   return (
-    <div
-      id="projects"
-      className="p-[20px] pt-[60px] sm:p-[40px] md:p-[60px] lg:p-[90px]"
-    >
-      <div className="text-center">
+    <section id="projects" className="w-full">
+      <div className="flex flex-col items-center px-6 pt-20 pb-10 text-center md:px-12 lg:pt-32">
         <Heading text="My Projects" />
-        <p className="opacity-60 text-[14px] md:text-[16px]">
+        <p className="mt-2 text-sm opacity-60 md:text-base">
           A Snapshot of My Projects
         </p>
       </div>
-      <Suspense fallback={<LoadingProjects />}>
-        <ProjectGrid />
-      </Suspense>
-    </div>
+      <ProjectGrid projects={projects} />
+    </section>
   );
 };
 

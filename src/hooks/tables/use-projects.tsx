@@ -70,11 +70,14 @@ export function useProjectsTable({ data }: UseProjectsTableProps) {
           </button>
         ),
         cell: ({ row }) => (
-          <div className="min-w-[220px] max-w-[220px]">
-            <p className="font-medium text-white">{row.original.name}</p>
-            <div className="mt-1 truncate line-clamp-1 max-w-lg text-xs text-white/50">
+          <div className="w-[180px] sm:w-[240px] lg:w-[320px]">
+            <p className="overflow-hidden text-ellipsis whitespace-nowrap font-medium text-white">
+              {row.original.name}
+            </p>
+
+            <p className="mt-1 overflow-hidden text-xs text-white/50 line-clamp-2">
               {row.original.content}
-            </div>
+            </p>
           </div>
         ),
       },
@@ -102,18 +105,28 @@ export function useProjectsTable({ data }: UseProjectsTableProps) {
         header: "Tags",
         cell: ({ row }) => {
           const tags = row.original.tags || [];
+          const visibleTags = tags.slice(0, 1);
+          const remainingCount = tags.length - visibleTags.length;
 
           return (
-            <div className="flex min-w-[180px] flex-wrap gap-1">
+            <div className="flex min-w-[180px]  gap-2">
               {tags.length ? (
-                tags.map((tag, i) => (
-                  <span
-                    key={`${tag}-${i}`}
-                    className="rounded-full border border-white/10 bg-white/[0.06] px-2 py-0.5 text-xs text-white/70"
-                  >
-                    {tag}
-                  </span>
-                ))
+                <>
+                  {visibleTags.map((tag, i) => (
+                    <span
+                      key={`${tag}-${i}`}
+                      className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-xs text-white/70"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+
+                  {remainingCount > 0 && (
+                    <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium text-white/50">
+                      +{remainingCount}
+                    </span>
+                  )}
+                </>
               ) : (
                 <span className="text-xs text-white/40">-</span>
               )}

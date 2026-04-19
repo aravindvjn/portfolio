@@ -1,10 +1,9 @@
 "use client";
 
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import {
   createHeroWordAction,
   deleteHeroWordAction,
-  getHeroWordsAction,
   updateHeroWordAction,
 } from "@/actions/hero-word.action";
 import { ADMIN_QUERY_KEYS } from "@/lib/query-keys";

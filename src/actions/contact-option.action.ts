@@ -3,18 +3,19 @@
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db";
 import type {
-  ActionResponse,
+  CreateContactOptionResponse,
+  DeleteContactOptionResponse,
+  GetContactOptionsResponse,
+  ToggleContactOptionResponse,
   ContactOptionPayload,
   UpdateContactOptionPayload,
+  UpdateContactOptionResponse,
 } from "@/types/admin.type";
 
-export async function getContactOptionsAction(): Promise<ActionResponse> {
+export async function getContactOptionsAction(): Promise<GetContactOptionsResponse> {
   try {
     const data = await prisma.contactOption.findMany({
-      orderBy: [
-        { priority: "asc" },
-        { createdAt: "desc" },
-      ],
+      orderBy: [{ priority: "asc" }, { createdAt: "desc" }],
     });
 
     return {
@@ -27,13 +28,14 @@ export async function getContactOptionsAction(): Promise<ActionResponse> {
     return {
       success: false,
       message: "Failed to fetch contact options.",
+      data: [],
     };
   }
 }
 
 export async function createContactOptionAction(
-  payload: ContactOptionPayload
-): Promise<ActionResponse> {
+  payload: ContactOptionPayload,
+): Promise<CreateContactOptionResponse> {
   try {
     const label = payload.label?.trim();
     const link = payload.link?.trim();
@@ -78,8 +80,8 @@ export async function createContactOptionAction(
 }
 
 export async function updateContactOptionAction(
-  payload: UpdateContactOptionPayload
-): Promise<ActionResponse> {
+  payload: UpdateContactOptionPayload,
+): Promise<UpdateContactOptionResponse> {
   try {
     const { id } = payload;
 
@@ -137,8 +139,8 @@ export async function updateContactOptionAction(
 }
 
 export async function deleteContactOptionAction(
-  id: string
-): Promise<ActionResponse> {
+  id: string,
+): Promise<DeleteContactOptionResponse> {
   try {
     if (!id?.trim()) {
       return {
@@ -169,19 +171,21 @@ export async function deleteContactOptionAction(
     return {
       success: true,
       message: "Contact option deleted successfully.",
+      data: null,
     };
   } catch (error) {
     console.error("deleteContactOptionAction error:", error);
     return {
       success: false,
       message: "Failed to delete contact option.",
+      data: null,
     };
   }
 }
 
 export async function toggleContactOptionStatusAction(
-  id: string
-): Promise<ActionResponse> {
+  id: string,
+): Promise<ToggleContactOptionResponse> {
   try {
     if (!id?.trim()) {
       return {
