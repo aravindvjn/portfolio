@@ -138,9 +138,9 @@ const HeroDesktop = ({ words }: Props) => {
 
   return (
     <section ref={sectionRef} className="relative  h-screen w-full overflow-hidden">
-      <div className="absolute left-0 top-0 z-10 h-full w-full bg-black/50" />
+      <div className="absolute left-0 top-0 z-[2] h-full w-full bg-black/60" />
 
-      <div ref={bgRef} className="absolute inset-0 will-change-transform">
+      <div ref={bgRef} className="absolute inset-0 will-change-transform overflow-hidden">
         <Image
           src={heroBackground}
           alt="Hero background"
@@ -175,7 +175,7 @@ const HeroDesktop = ({ words }: Props) => {
         <div className="relative flex-1">
           <div
             ref={introRef}
-            className="absolute inset-0 flex items-center justify-center"
+            className="absolute inset-0 flex z-11 opacity-70 items-center justify-center"
           >
             <div className="flex h-full w-full p-[20px] font-bold text-white/90 sm:p-[40px] md:p-[60px] lg:p-[90px]">
               <div className="self-end">
