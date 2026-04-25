@@ -99,6 +99,10 @@ export async function createProjectAction(
     revalidatePath("/");
     revalidatePath("/admin");
     revalidatePath("/v1/admin");
+    revalidatePath("/works");
+    revalidatePath("/works/personal");
+    revalidatePath("/works/professional");
+    revalidatePath("/works/npm");
 
     return {
       success: true,
@@ -162,6 +166,10 @@ export async function updateProjectAction(
     revalidatePath("/");
     revalidatePath("/admin");
     revalidatePath("/v1/admin");
+    revalidatePath("/works");
+    revalidatePath("/works/personal");
+    revalidatePath("/works/professional");
+    revalidatePath("/works/npm");
 
     return {
       success: true,
@@ -204,6 +212,10 @@ export async function deleteProjectAction(id: string): Promise<ActionResponse> {
     revalidatePath("/");
     revalidatePath("/admin");
     revalidatePath("/v1/admin");
+    revalidatePath("/works");
+    revalidatePath("/works/personal");
+    revalidatePath("/works/professional");
+    revalidatePath("/works/npm");
 
     return {
       success: true,
@@ -253,6 +265,10 @@ export async function toggleFeaturedProject(
     revalidatePath("/");
     revalidatePath("/admin");
     revalidatePath("/v1/admin");
+    revalidatePath("/works");
+    revalidatePath("/works/personal");
+    revalidatePath("/works/professional");
+    revalidatePath("/works/npm");
 
     return {
       success: true,

@@ -31,9 +31,9 @@ const Hero = ({ words }: Props) => {
           <p className="text-[20px] sm:text-[30px] md:text-[40px] lg:text-[50px] leading-[1.1]">
             Hai,
           </p>
-          <p className="text-[27px] sm:text-[40px] md:text-60px] lg:text-[70px] leading-[1]">
+          <h1 className="text-[27px] sm:text-[40px] md:text-60px] lg:text-[70px] leading-[1]">
             I&#39;m Aravind Vijayan
-          </p>
+          </h1>
           <p className="text-[18px] sm:text-[25px] md:text-[30px] lg:text-[35px] leading-[1.4]">
             <TypingEffect words={words?.length ? words : WORDS} />
           </p>

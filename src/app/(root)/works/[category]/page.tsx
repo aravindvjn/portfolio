@@ -2,12 +2,33 @@ import Footer from "@/components/common/footer";
 import NavBar from "@/components/common/nav-bar";
 import Projects from "@/components/projects/projects";
 import { getAllProjects } from "@/services/projects.service";
+import { notFound } from "next/navigation";
+
+const categories = ["personal", "professional", "npm"] as const;
+
+type WorksCategory = (typeof categories)[number];
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
 
-const Page = async () => {
-  const { data } = await getAllProjects();
+export function generateStaticParams() {
+  return categories.map((category) => ({
+    category,
+  }));
+}
+
+const Page = async ({
+  params,
+}: {
+  params: Promise<{ category: WorksCategory }>;
+}) => {
+  const { category } = await params;
+
+  if (!categories.includes(category)) {
+    notFound();
+  }
+
+  const { data } = await getAllProjects(category);
 
   return (
     <section>
@@ -17,7 +38,7 @@ const Page = async () => {
         projects={data?.projects}
         npmPackages={data?.npmPackages}
         stats={data.stats}
-        activeCategory={undefined}
+        activeCategory={category}
         showAllLink
       />
 

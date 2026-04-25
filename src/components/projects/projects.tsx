@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { ExternalLink, Package } from "lucide-react";
 import Heading from "../common/heading";
 import ProjectGrid from "./project-grid";
 import { ProjectType } from "./type";
 import { cn } from "@/lib/utils";
-import { BsGithub } from "react-icons/bs";
 import NpmPackageCard from "./NpmPackageCard";
 
 type Stats = {
@@ -60,19 +58,19 @@ const Projects = ({
     {
       label: "Professional Projects",
       value: stats.professionalProjects,
-      href: "/works?category=professional",
+      href: "/works/professional",
       category: "professional",
     },
     {
       label: "Personal Projects",
       value: stats.personalProjects,
-      href: "/works?category=personal",
+      href: "/works/personal",
       category: "personal",
     },
     {
       label: "NPM Packages",
       value: stats.npmPackages,
-      href: "/works?category=npm",
+      href: "/works/npm",
       category: "npm",
     },
   ].filter((item) => item.value > 0);

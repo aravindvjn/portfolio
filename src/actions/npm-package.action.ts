@@ -2,7 +2,10 @@
 
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db";
-import type { ActionResponse, GetNpmPackagesResponse } from "@/types/admin.type";
+import type {
+  ActionResponse,
+  GetNpmPackagesResponse,
+} from "@/types/admin.type";
 
 export type NpmPackagePayload = {
   name: string;
@@ -126,6 +129,9 @@ export async function createNpmPackageAction(
 
     revalidatePath("/");
     revalidatePath("/works");
+    revalidatePath("/works/personal");
+    revalidatePath("/works/professional");
+    revalidatePath("/works/npm");
     revalidatePath("/admin");
     revalidatePath("/v1/admin");
 
@@ -234,6 +240,9 @@ export async function updateNpmPackageAction(
 
     revalidatePath("/");
     revalidatePath("/works");
+    revalidatePath("/works/personal");
+    revalidatePath("/works/professional");
+    revalidatePath("/works/npm");
     revalidatePath("/admin");
     revalidatePath("/v1/admin");
 
@@ -280,6 +289,9 @@ export async function deleteNpmPackageAction(
 
     revalidatePath("/");
     revalidatePath("/works");
+    revalidatePath("/works/personal");
+    revalidatePath("/works/professional");
+    revalidatePath("/works/npm");
     revalidatePath("/admin");
     revalidatePath("/v1/admin");
 
@@ -331,6 +343,9 @@ export async function toggleFeaturedNpmPackage(
 
     revalidatePath("/");
     revalidatePath("/works");
+    revalidatePath("/works/personal");
+    revalidatePath("/works/professional");
+    revalidatePath("/works/npm");
     revalidatePath("/admin");
     revalidatePath("/v1/admin");
 
