@@ -19,7 +19,7 @@ export default async function Home() {
         <HeroDesktop words={data?.heroWords?.map((i) => i?.text)} />
       </div>
       <MyStack />
-      <Projects projects={data?.projects} />
+      <Projects stats={data?.stats} projects={data?.projects} />
       <Contact contactOptions={data?.contactOptions} />
       <Footer />
     </>

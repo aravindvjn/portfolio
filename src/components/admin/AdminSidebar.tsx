@@ -12,6 +12,7 @@ import {
   X,
   LogOut,
   ChevronRight,
+  Package,
 } from "lucide-react";
 import LogoutButton from "../buttons/LogoutButton";
 
@@ -31,6 +32,11 @@ const navItems: NavItem[] = [
     label: "Projects",
     href: "/v1/admin/projects",
     icon: FolderKanban,
+  },
+  {
+    label: "NPM Packages",
+    href: "/v1/admin/npm-packages",
+    icon: Package,
   },
   {
     label: "Hero Words",

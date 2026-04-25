@@ -1,4 +1,9 @@
-import type { ContactOption, HeroWord, Projects } from "@prisma/client";
+import type {
+  ContactOption,
+  HeroWord,
+  NpmPackage,
+  Projects,
+} from "@prisma/client";
 
 export type ActionResponse<T = unknown> = {
   success: boolean;
@@ -9,6 +14,7 @@ export type ActionResponse<T = unknown> = {
 export type ProjectItem = Projects;
 export type HeroWordItem = HeroWord;
 export type ContactOptionItem = ContactOption;
+export type NpmPackageItem = NpmPackage;
 export type ProjectCategory = "PERSONAL" | "PROFESSIONAL";
 
 export type ProjectPayload = {
@@ -87,3 +93,7 @@ export type DeleteContactOptionResponse = ActionResponse<null>;
 export type ToggleContactOptionResponse = ActionResponse<ContactOptionItem>;
 
 export type GetAdminStatsResponse = ActionResponse<AdminStats>;
+
+export type GetNpmPackageResponse = ActionResponse<NpmPackageItem>;
+export type GetNpmPackagesResponse = ActionResponse<NpmPackageItem[]>;
+export type CreateNpmPackageResponse = ActionResponse<NpmPackageItem>;

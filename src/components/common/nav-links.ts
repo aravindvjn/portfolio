@@ -12,8 +12,8 @@ export const navLinks = [
         link: "/#stack"
     },
     {
-        label: "Projects",
-        link: "/#projects"
+        label: "My Works",
+        link: "/works"
     },
     {
         label: "Contact",

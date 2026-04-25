@@ -9,45 +9,52 @@ import {
   type SortingState,
 } from "@tanstack/react-table";
 import { ArrowUpDown, ExternalLink, Pencil, Trash2 } from "lucide-react";
-import FeaturedButton from "@/components/admin-projects/FeaturedButton";
+import FeaturedNpmPackageButton from "@/components/admin-npm-packages/FeaturedNpmPackageButton";
 
-export type ProjectTableItem = {
+export type NpmPackageTableItem = {
   id: string;
   name: string;
-  content: string;
-  githubLink: string;
+  packageName: string;
+  description: string;
+  npmUrl: string | null;
+  githubUrl: string | null;
+  demoUrl: string | null;
   image_url: string | null;
-  priority: number | null;
-  category: "PERSONAL" | "PROFESSIONAL";
+  version: string | null;
   tags: string[];
   isFeatured: boolean;
+  priority: number | null;
+  createdAt: Date;
+  updatedAt: Date;
 };
 
-type UseProjectsTableProps = {
-  data: ProjectTableItem[];
+type UseNpmPackagesTableProps = {
+  data: NpmPackageTableItem[];
 };
 
-export function useProjectsTable({ data }: UseProjectsTableProps) {
+export function useNpmPackagesTable({ data }: UseNpmPackagesTableProps) {
   const [search, setSearch] = useState("");
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [editingProject, setEditingProject] = useState<ProjectTableItem | null>(
-    null,
-  );
-  const [deletingProject, setDeletingProject] =
-    useState<ProjectTableItem | null>(null);
+  const [editingPackage, setEditingPackage] =
+    useState<NpmPackageTableItem | null>(null);
+  const [deletingPackage, setDeletingPackage] =
+    useState<NpmPackageTableItem | null>(null);
 
   const filteredData = useMemo(() => {
     const query = search.trim().toLowerCase();
 
     if (!query) return data;
 
-    return data.filter((project) => {
+    return data.filter((item) => {
       const text = [
-        project.name,
-        project.content,
-        project.githubLink,
-        project.category,
-        ...(project.tags ?? []),
+        item.name,
+        item.packageName,
+        item.description,
+        item.npmUrl,
+        item.githubUrl,
+        item.demoUrl,
+        item.version,
+        ...(item.tags ?? []),
       ]
         .filter(Boolean)
         .join(" ")
@@ -57,7 +64,7 @@ export function useProjectsTable({ data }: UseProjectsTableProps) {
     });
   }, [data, search]);
 
-  const columns = useMemo<ColumnDef<ProjectTableItem>[]>(
+  const columns = useMemo<ColumnDef<NpmPackageTableItem>[]>(
     () => [
       {
         accessorKey: "name",
@@ -67,36 +74,29 @@ export function useProjectsTable({ data }: UseProjectsTableProps) {
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
             className="flex items-center gap-2"
           >
-            Project
+            Package
             <ArrowUpDown size={14} />
           </button>
         ),
         cell: ({ row }) => (
-          <div className="max-w-[100px]!">
+          <div className="max-w-[170px]">
             <p className="overflow-hidden text-ellipsis whitespace-nowrap font-medium text-white">
               {row.original.name}
+            </p>
+            <p className="mt-1 overflow-hidden text-ellipsis whitespace-nowrap text-xs text-white/40">
+              {row.original.packageName}
             </p>
           </div>
         ),
       },
       {
-        accessorKey: "category",
-        header: "Category",
-        cell: ({ row }) => {
-          const category = row.original.category;
-
-          return (
-            <span
-              className={`rounded-full border px-3 py-1 text-xs font-medium ${
-                category === "PROFESSIONAL"
-                  ? "border-blue-500/20 bg-blue-500/10 text-blue-400"
-                  : "border-purple-500/20 bg-purple-500/10 text-purple-400"
-              }`}
-            >
-              {category}
-            </span>
-          );
-        },
+        accessorKey: "version",
+        header: "Version",
+        cell: ({ row }) => (
+          <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400">
+            {row.original.version || "-"}
+          </span>
+        ),
       },
       {
         accessorKey: "tags",
@@ -107,7 +107,7 @@ export function useProjectsTable({ data }: UseProjectsTableProps) {
           const remainingCount = tags.length - visibleTags.length;
 
           return (
-            <div className="flex min-w-[180px]  gap-2">
+            <div className="flex min-w-[180px] gap-2">
               {tags.length ? (
                 <>
                   {visibleTags.map((tag, i) => (
@@ -133,17 +133,55 @@ export function useProjectsTable({ data }: UseProjectsTableProps) {
         },
       },
       {
-        accessorKey: "githubLink",
-        header: "Link",
+        id: "links",
+        header: "Links",
         cell: ({ row }) => (
-          <a
-            href={row.original.githubLink}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1 text-sm text-blue-400 hover:underline"
-          >
-            <ExternalLink size={14} />
-          </a>
+          <div className="flex items-center gap-3">
+            {row.original.npmUrl && (
+              <a
+                href={row.original.npmUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-red-400 hover:underline"
+                title="NPM"
+              >
+                NPM
+                <ExternalLink size={13} />
+              </a>
+            )}
+
+            {row.original.githubUrl && (
+              <a
+                href={row.original.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-blue-400 hover:underline"
+                title="GitHub"
+              >
+                GitHub
+                <ExternalLink size={13} />
+              </a>
+            )}
+
+            {row.original.demoUrl && (
+              <a
+                href={row.original.demoUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-purple-400 hover:underline"
+                title="Demo"
+              >
+                Demo
+                <ExternalLink size={13} />
+              </a>
+            )}
+
+            {!row.original.npmUrl &&
+              !row.original.githubUrl &&
+              !row.original.demoUrl && (
+                <span className="text-xs text-white/40">-</span>
+              )}
+          </div>
         ),
       },
       {
@@ -158,9 +196,7 @@ export function useProjectsTable({ data }: UseProjectsTableProps) {
       {
         accessorKey: "isFeatured",
         header: "Featured",
-        cell: ({ row }) => (
-          <FeaturedButton row={row?.original} />
-        ),
+        cell: ({ row }) => <FeaturedNpmPackageButton row={row.original} />,
       },
       {
         id: "actions",
@@ -169,7 +205,7 @@ export function useProjectsTable({ data }: UseProjectsTableProps) {
           <div className="flex items-center justify-end gap-2">
             <button
               type="button"
-              onClick={() => setEditingProject(row.original)}
+              onClick={() => setEditingPackage(row.original)}
               className="rounded-lg border border-white/10 bg-white/[0.05] p-2 text-white/70 transition hover:bg-white/[0.1] hover:text-white"
               aria-label={`Edit ${row.original.name}`}
             >
@@ -178,7 +214,7 @@ export function useProjectsTable({ data }: UseProjectsTableProps) {
 
             <button
               type="button"
-              onClick={() => setDeletingProject(row.original)}
+              onClick={() => setDeletingPackage(row.original)}
               className="rounded-lg border border-red-500/20 bg-red-500/10 p-2 text-red-400 transition hover:bg-red-500/20"
               aria-label={`Delete ${row.original.name}`}
             >
@@ -208,9 +244,9 @@ export function useProjectsTable({ data }: UseProjectsTableProps) {
     sorting,
     setSorting,
     filteredData,
-    editingProject,
-    setEditingProject,
-    deletingProject,
-    setDeletingProject,
+    editingPackage,
+    setEditingPackage,
+    deletingPackage,
+    setDeletingPackage,
   };
 }

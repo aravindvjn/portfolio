@@ -1,29 +1,35 @@
 import { prisma } from "@/lib/db";
-export const getPortfolioData = async () => {
+
+type WorksCategory = "personal" | "professional" | "npm";
+
+export const getAllProjects = async (category?: WorksCategory) => {
   try {
+    const where =
+      category === "personal"
+        ? { category: "PERSONAL" as const }
+        : category === "professional"
+          ? { category: "PROFESSIONAL" as const }
+          : undefined;
+
     const [
       projects,
-      heroWords,
-      contactOptions,
+      npmPackages,
       personalProjectsCount,
       professionalProjectsCount,
       npmPackagesCount,
     ] = await Promise.all([
-      prisma.projects.findMany({
-        orderBy: [{ priority: "asc" }, { name: "asc" }],
-        where: {
-          isFeatured: true,
-        },
-      }),
+      category === "npm"
+        ? Promise.resolve([])
+        : prisma.projects.findMany({
+            where,
+            orderBy: [{ priority: "asc" }, { name: "asc" }],
+          }),
 
-      prisma.heroWord.findMany({
-        orderBy: [{ priority: "asc" }, { createdAt: "asc" }],
-      }),
-
-      prisma.contactOption.findMany({
-        where: { isActive: true },
-        orderBy: [{ priority: "asc" }, { createdAt: "asc" }],
-      }),
+      category === "npm"
+        ? prisma.npmPackage.findMany({
+            orderBy: [{ priority: "asc" }, { name: "asc" }],
+          })
+        : Promise.resolve([]),
 
       prisma.projects.count({
         where: {
@@ -44,32 +50,30 @@ export const getPortfolioData = async () => {
       success: true,
       data: {
         projects,
-        heroWords,
-        contactOptions,
+        npmPackages,
         stats: {
           personalProjects: personalProjectsCount,
           professionalProjects: professionalProjectsCount,
           npmPackages: npmPackagesCount,
         },
       },
-      message: "Portfolio data fetched successfully",
+      message: "Works fetched successfully",
     };
   } catch (error) {
-    console.error("getPortfolioData error:", error);
+    console.error("getAllProjects error:", error);
 
     return {
       success: false,
       data: {
         projects: [],
-        heroWords: [],
-        contactOptions: [],
+        npmPackages: [],
         stats: {
           personalProjects: 0,
           professionalProjects: 0,
           npmPackages: 0,
         },
       },
-      message: "Failed to fetch portfolio data",
+      message: "Failed to fetch works",
     };
   }
 };

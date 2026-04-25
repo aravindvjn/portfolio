@@ -8,6 +8,7 @@ import type {
   UpdateProjectPayload,
 } from "@/types/admin.type";
 import { prisma } from "@/lib/db";
+import { ProjectTableItem } from "@/hooks/tables/use-projects";
 
 export async function getProjectsAction(): Promise<GetProjectsResponse> {
   try {
@@ -213,6 +214,56 @@ export async function deleteProjectAction(id: string): Promise<ActionResponse> {
     return {
       success: false,
       message: "Failed to delete project.",
+    };
+  }
+}
+
+export async function toggleFeaturedProject(
+  id: ProjectTableItem["id"],
+): Promise<ActionResponse> {
+  try {
+    if (!id?.trim()) {
+      return {
+        success: false,
+        message: "Project id is required.",
+      };
+    }
+
+    const existing = await prisma.projects.findUnique({
+      where: { id },
+      select: {
+        isFeatured: true,
+      },
+    });
+
+    if (!existing) {
+      return {
+        success: false,
+        message: "Project not found.",
+      };
+    }
+
+    const data = await prisma.projects.update({
+      where: { id },
+      data: {
+        isFeatured: !existing?.isFeatured,
+      },
+    });
+
+    revalidatePath("/");
+    revalidatePath("/admin");
+    revalidatePath("/v1/admin");
+
+    return {
+      success: true,
+      message: `Project ${data.isFeatured ? "featured" : "unfeatured"} successfully.`,
+      data,
+    };
+  } catch (error) {
+    console.error("toggleFeaturedProject error:", error);
+    return {
+      success: false,
+      message: "Failed to toggle featured project.",
     };
   }
 }

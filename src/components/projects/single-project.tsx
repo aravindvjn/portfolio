@@ -10,30 +10,58 @@ import ShowPreview from "./show-preview";
 export function SingleProject(
   project: ProjectType & {
     index: number;
-  }
+  },
 ) {
-  const { content, githubLink, name, index, image_url } = project;
-  const placeholder = "/placeholder.jpg";
+  const {
+    content,
+    githubLink,
+    name,
+    index,
+    image_url,
+    tags = [],
+    category,
+  } = project;
 
+  const placeholder = "/placeholder.jpg";
   const [showPreview, setShowPreview] = useState<boolean>(false);
 
   const handleClick = () => {
     setShowPreview(true);
   };
+  const metaComponent = (
+    <div className="mb-[10px] flex flex-wrap items-center gap-2 px-[5px]">
+      {category && (
+        <span className="rounded-full border border-blue-400/40 bg-blue-500/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-blue-300">
+          {category}
+        </span>
+      )}
+
+      {tags?.map((tag,index) => (
+        <span
+          key={tag + index}
+          className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[10px] text-white/70 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
+        >
+          #{tag}
+        </span>
+      ))}
+    </div>
+  );
 
   const imageComponent = (
     <CardContainer className="w-full h-full ">
       <img
-  onClick={handleClick}
-  src={image_url || placeholder}
-  className="h-full cursor-pointer w-full outline outline-white/30 outline-[1px] object-cover rounded sm:rounded-xl group-hover/card:shadow-xl"
-  alt="thumbnail"
-/>
+        onClick={handleClick}
+        src={image_url || placeholder}
+        className="h-full cursor-pointer w-full outline outline-white/30 outline-[1px] object-cover rounded sm:rounded-xl group-hover/card:shadow-xl"
+        alt="thumbnail"
+      />
     </CardContainer>
   );
 
   const contentComponent = (
     <div className="w-full mt-[10px] md:mt-0 flex self-start flex-col h-full">
+      {metaComponent}
+
       <p className="text-[12px] sm:text-[14px] opacity-60 text-justify hover:opacity-100 cursor-pointer duration-100 ease-in-out">
         {content}
       </p>
@@ -43,14 +71,16 @@ export function SingleProject(
           scale: 1.01,
           rotateZ: "-2deg",
         }}
-        className={`mt-[10px] sm:mt-[20px] ${index % 2 === 1 ? "md:self-end" : ""}`}
+        className={`mt-[10px] sm:mt-[20px] ${
+          index % 2 === 1 ? "md:self-end" : ""
+        }`}
       >
         <Link
           target="_blank"
           href={githubLink}
           className="bg-blue-500 text-[12px] md:text-[16px] px-[15px]  py-[7px] rounded w-fit "
         >
-          {githubLink?.includes('github') ? "Source code" : "Vist site"}
+          {githubLink?.includes("github") ? "Source code" : "Vist site"}
         </Link>
       </motion.div>
     </div>
@@ -62,11 +92,10 @@ export function SingleProject(
     </p>
   );
 
-  if (isNaN(index)) return;
+  if (isNaN(index)) return null;
 
   return (
     <div>
-
       <ShowPreview
         {...project}
         setShowPreview={setShowPreview}
@@ -91,7 +120,6 @@ export function SingleProject(
         {imageComponent}
         {contentComponent}
       </div>
-
     </div>
   );
 }

@@ -1,78 +1,97 @@
+"use client";
+
 import {
-  createProjectAction,
-  deleteProjectAction,
-  toggleFeaturedProject,
-  updateProjectAction,
-} from "@/actions/project.action";
+  createNpmPackageAction,
+  deleteNpmPackageAction,
+  toggleFeaturedNpmPackage,
+  updateNpmPackageAction,
+} from "@/actions/npm-package.action";
+
 import { ADMIN_QUERY_KEYS } from "@/lib/query-keys";
-import { ProjectPayload, UpdateProjectPayload } from "@/types/admin.type";
+import {
+  NpmPackagePayload,
+  UpdateNpmPackagePayload,
+} from "@/actions/npm-package.action";
+
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
-export function useCreateProject() {
+
+export function useCreateNpmPackage() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (payload: ProjectPayload) => createProjectAction(payload),
+    mutationFn: (payload: NpmPackagePayload) =>
+      createNpmPackageAction(payload),
+
     onSuccess: (res) => {
       if (res.success) {
         queryClient.invalidateQueries({
-          queryKey: ADMIN_QUERY_KEYS.projects,
-        });
-      }
-    },
-  });
-}
-
-export function useUpdateProject() {
-  const queryClient = useQueryClient();
-
-  return useMutation({
-    mutationFn: (payload: UpdateProjectPayload) => updateProjectAction(payload),
-    onSuccess: (res) => {
-      if (res.success) {
-        queryClient.invalidateQueries({
-          queryKey: ADMIN_QUERY_KEYS.projects,
-        });
-      }
-    },
-  });
-}
-
-export function useDeleteProject() {
-  const queryClient = useQueryClient();
-
-  return useMutation({
-    mutationFn: (id: string) => deleteProjectAction(id),
-    onSuccess: (res) => {
-      if (res.success) {
-        queryClient.invalidateQueries({
-          queryKey: ADMIN_QUERY_KEYS.projects,
-        });
-      }
-    },
-  });
-}
-
-export function useToggleFeaturedProject() {
-  const queryClient = useQueryClient();
-
-  return useMutation({
-    mutationFn: (id: string) => toggleFeaturedProject(id),
-    onSuccess: (res) => {
-      if (res.success) {
-        queryClient.invalidateQueries({
-          queryKey: ADMIN_QUERY_KEYS.projects,
+          queryKey: ADMIN_QUERY_KEYS.npmPackages,
         });
         toast.success(res.message);
       }
     },
+  });
+}
+
+export function useUpdateNpmPackage() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (payload: UpdateNpmPackagePayload) =>
+      updateNpmPackageAction(payload),
+
+    onSuccess: (res) => {
+      if (res.success) {
+        queryClient.invalidateQueries({
+          queryKey: ADMIN_QUERY_KEYS.npmPackages,
+        });
+        toast.success(res.message);
+      }
+    },
+  });
+}
+
+export function useDeleteNpmPackage() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (id: string) => deleteNpmPackageAction(id),
+
+    onSuccess: (res) => {
+      if (res.success) {
+        queryClient.invalidateQueries({
+          queryKey: ADMIN_QUERY_KEYS.npmPackages,
+        });
+        toast.success(res.message);
+      }
+    },
+  });
+}
+
+export function useToggleFeaturedNpmPackage() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (id: string) => toggleFeaturedNpmPackage(id),
+
+    onSuccess: (res) => {
+      if (res.success) {
+        queryClient.invalidateQueries({
+          queryKey: ADMIN_QUERY_KEYS.npmPackages,
+        });
+        toast.success(res.message);
+      }
+    },
+
     onError: (error) => {
       const errorMessage =
         typeof error?.message === "string"
-          ? error?.message
+          ? error.message
           : "Something went wrong";
-      if (!errorMessage?.includes("NEXT_REDIRECT")) {
+
+      if (!errorMessage.includes("NEXT_REDIRECT")) {
         toast.error(errorMessage);
       }
     },

@@ -22,6 +22,7 @@ model Projects {
   priority   Int?
   category   ProjectCategory @default(PERSONAL)
   tags       String[]        @default([])
+  isFeatured Boolean         @default(false)
 }
 
 model HeroWord {
@@ -41,4 +42,24 @@ model ContactOption {
   isActive  Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model NpmPackage {
+  id          String          @id @default(uuid())
+  name        String
+  packageName String          @unique
+  description String
+  npmUrl      String?
+  githubUrl   String?
+  demoUrl     String?
+  image_url   String?
+
+  version     String?
+  tags        String[]        @default([])
+
+  isFeatured  Boolean         @default(false)
+  priority    Int?
+
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
 }
